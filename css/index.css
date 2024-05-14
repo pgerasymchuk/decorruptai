@@ -37,3 +37,7 @@ input[type="submit"]:hover, input[type="reset"]:hover {
     width: 100%;
     border: solid lightgray 1px;
 }
+
+a:link, a:visited {
+    color: blue;
+}

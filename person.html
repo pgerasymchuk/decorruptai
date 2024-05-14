@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформація про особу</title>
+    <link rel="stylesheet" type="text/css" href="css/person.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Інформація про особу</h1>
+
+        <table>
+            <tr>
+                <td>Прізвище</td>
+                <td id="lastName-cell"></td>
+            </tr>
+            <tr>
+                <td>Ім'я</td>
+                <td id="firstName-cell"></td>
+            </tr>
+            <tr>
+                <td>По батькові</td>
+                <td id="patronymicName-cell"></td>
+            </tr>
+        </table>
+
+        <div class="section">
+            <h2>Пов'язані особи</h2>
+            <table id="related-people-table"></table>
+        </div>
+
+        <div class="section">
+            <h2>Подані декларації</h2>
+            <table id="declarations-table">
+                <tr>
+                    <th>Дата подання</th>
+                    <th>Рік звітності</th>
+                    <th>Тип документа</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/person.js"></script>
+
+</body>
+</html>
