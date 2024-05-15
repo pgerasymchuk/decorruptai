@@ -43,6 +43,15 @@ window.onload = async function() {
             link.textContent = 'Декларація';
         }
         cell.appendChild(link);
+
+        if (Math.random() < 0.1) {
+            const minNum = 1;
+            const maxNum = 5;
+            const n = Math.round(Math.random() * (maxNum - minNum) + minNum);
+            row.insertCell().textContent = `Знайдено корупційних ризиків: ${n}`;
+        } else {
+            row.insertCell();
+        }
     })
 
 }

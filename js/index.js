@@ -8,14 +8,26 @@ document.getElementById('form').addEventListener('submit', async function(event)
     clearResults();
 
     const declarations = await loadDeclarations(lastName + ' ' + firstName + ' ' + patronymicName);
-    const displayed_person_ids = [];
 
-    declarations.forEach(item => {
-        if (!displayed_person_ids.includes(item.personID)){
-            displayed_person_ids.push(item.personID);
-            displayPerson(item.lastName, item.firstName, item.patronymicName, item.personID)
-        }
-    })
+    if (declarations.length === 0) {
+
+        const h4 = document.createElement('h4');
+        h4.innerText = 'За заданими параметрами осіб не знайдено!';
+        h4.classList.add('result')
+        document.getElementById('container').appendChild(h4);
+
+    } else {
+
+        const displayed_person_ids = [];
+
+        declarations.forEach(item => {
+            if (!displayed_person_ids.includes(item.personID)){
+                displayed_person_ids.push(item.personID);
+                displayPerson(item.lastName, item.firstName, item.patronymicName, item.personID)
+            }
+        })
+    }
+
 });
 
 document.getElementById('form').addEventListener('reset', clearResults);
@@ -37,7 +49,7 @@ async function loadDeclarations(query){
 
     const declarations = [];
 
-    content.data.forEach(item => {
+    content.data?.forEach(item => {
         declarations.push({
             personID: item.user_declarant_id,
             declarationID: item.id,
@@ -62,6 +74,7 @@ function displayPerson(lastName, firstName, patronymicName, id) {
 
     const result = document.createElement('div');
     result.classList.add('result');
+    result.classList.add('person');
 
     link.appendChild(h4);
     result.appendChild(link);

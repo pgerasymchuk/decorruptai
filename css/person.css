@@ -3,18 +3,64 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+
 }
 
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
+    margin: 30px;
 }
 
 a:link, a:visited {
     color: blue;
+}
+
+table {
+    width: 800px;
+}
+
+#name-table td, #related-people-table td,
+#name-table th, #related-people-table th {
+    padding: 5px;
+}
+
+#name-table td:nth-child(1), #related-people-table td:nth-child(1) {
+    width: 30%;
+}
+
+#name-table td:nth-child(2), #related-people-table td:nth-child(2) {
+    width: 70%;
+    border-bottom: 1px solid gray;
+}
+
+#related-people-table, #declarations-table {
+    border-collapse: collapse;
+}
+
+#related-people-table td, #related-people-table th,
+#declarations-table td, #declarations-table th {
+    border: 1px solid black;
+}
+
+#declarations-table td, #declarations-table th {
+    width: 20%;
+    padding: 3px;
+}
+
+#declarations-table td:nth-child(4) {
+    width:40%;
+    color: red;
+}
+
+#related-people-table td, #declarations-table td {
+    text-align: center;
 }
